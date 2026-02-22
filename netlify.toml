@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[build.lifecycle]
+  # This runs instead of `npm install`
+  install = "npm install -f"
