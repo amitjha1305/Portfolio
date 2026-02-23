@@ -7,81 +7,12 @@ import { Github, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'LinkGen - Smart AI writing for LinkedIn.',
-    description:
-      'LinkGen is an AI-powered LinkedIn post generator built with Streamlit and Groq’s LLaMA 3.3 70B model via LangChain. It helps users create high-quality, on-brand LinkedIn posts in seconds based on selected parameters like topic, length, language, and tone. Powered by real LinkedIn post data and few-shot learning, it offers features like auto-emojis, hashtag injection, A/B variant generation, batch exports, and instant copy. Designed for speed, consistency, and creativity, LinkGen turns LinkedIn content creation into a seamless, scalable process.',
-    image: './linkgen.png',
-    tags: ['Python', 'Langchain_Groq', 'GroqCloud', 'Streamlit'],
-    github: 'https://github.com/iamAmitkumar',
-    demo: 'https://linkgen-r6fh.onrender.com/',
-  },
-  {
-    title: 'NovaMind – An Intelligent and Versatile AI Chatbot',
-    description:
-      "NovaMind is a cutting-edge AI GPT/chatbot built using Google Generative AI, Vite.js, and Firebase. It offers intelligent conversational capabilities with features like chat history, allowing users to save and revisit past conversations from anywhere in the world. With secure authentication, users' data remains private and accessible only to them. NovaMind assists with a variety of tasks, including coding, programming, mathematics, and general queries, all wrapped in a uniquely designed and intuitive UI/UX.",
-    image: './gpt.png',
-    tags: [
-      'Vite.js',
-      'Firebase',
-      'Tailwind CSS',
-      'Google Generative AI',
-      'Context API',
-    ],
-    github: 'https://github.com/iamAmitkumar',
-    demo: 'https://novamindai.netlify.app/',
-  },
-  {
-    title: 'Weather App with daily and hourly forecasts.',
-    description:
-      'It is an API-based weather app that shows the real-time weather across the world. it also shows the daily and hourly forecasts. it contains all the features that a weather app must have such as humidity, wind speed, heat index, etc.',
-    image: './weather.jpg',
-    tags: ['React', 'Tailwind CSS', 'OpenWeather API'],
-    github: 'https://github.com/iamAmitkumar/weather_forecast_app',
-    demo: 'https://iamAmitkumar.github.io/weather_forecast_app/',
-  },
-  {
-    title: 'iNoteBook - Notes on Cloud',
-    description:
-      'It is a cloud-based note-saving or MERN project. where users can easily add, edit, delete, and access their notes quickly and easily from anywhere in the world as it uses cloud database storage.',
-    image: './note.jpg',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB'],
-    github: 'https://github.com/iamAmitkumar/iNoteBook_Notes_on_Cloud',
-    demo: 'https://github.com/iamAmitkumar/iNoteBook_Notes_on_Cloud',
-  },
-  {
-    title: 'News App - Realtime News',
-    description:
-      'It is an API-based web app that uses the external API for fetching the news and shows to the user. it also contains categories that enable the user to choose their desired category.',
-    image: './news.jpg',
-    tags: ['React', 'News API', 'Dark Mode'],
-    github: 'https://github.com/iamAmitkumar/news_app',
-    demo: 'https://github.com/iamAmitkumar/news_app',
-  },
-  {
-    title: 'Data Visualisation Dashboard',
-    description:
-      'It is a graphical representation project that fetches data from their API (backend) and shows it to the user in the form of a pie chart. it also includes filter functionality tht enables user to filter data.',
-    image: './ddb.jpg',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB'],
-    github: 'https://github.com/iamAmitkumar/data_visualisation_dashboard',
-    demo: 'https://github.com/iamAmitkumar/data_visualisation_dashboard',
-  },
-  {
-    title: 'Texter - Text Manipulator',
-    description:
-      'It is a text editor tool that contains all the functionality that a text editor tool must have. with the help of its features, users can easily manipulate their text.',
-    image: 'https://cdn-icons-png.flaticon.com/512/5047/5047146.png',
-    tags: ['React'],
-    github: 'https://github.com/iamAmitkumar/texter_react_app',
-    demo: 'https://texterr.netlify.app',
-  },
-  {
     title: 'Personal Portfolio',
     description:
       'It is my personal portfolio website totally made up of React reusable components. here you can check my skills and projects on this website',
     image: './portfolio.jpg',
     tags: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Magic UI'],
-    demo: 'https://iamAmit.netlify.app',
+    demo: 'https://amit-tech.vercel.app',
   },
 ];
 
