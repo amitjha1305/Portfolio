@@ -21,7 +21,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           ref={ref}
         >
-          About Me
+          Get to know me
         </motion.h2>
 
         <div className='flex flex-col md:flex-row items-center gap-12'>
