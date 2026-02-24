@@ -8,15 +8,15 @@ const playfair = Playfair_Display({ subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
 const skillsLeft = [
-  { name: 'Frontend Development (Next.js, React)', percentage: 90 },
+  { name: 'Frontend Development (Next.js, React)', percentage: 70 },
   { name: 'Cloud Deployment & AWS (EC2, S3)', percentage: 85 },
-  { name: 'REST API Integration', percentage: 88 },
+  { name: 'REST API Integration', percentage: 60 },
 ];
 
 const skillsRight = [
-  { name: 'Backend Development (Node.js, SQL)', percentage: 80 },
-  { name: 'Dashboard & BI Systems (Metabase, Zoho)', percentage: 85 },
-  { name: 'Automation & Workflow Systems', percentage: 82 },
+  { name: 'Backend Development (Node.js, SQL)', percentage: 60 },
+  { name: 'Dashboard & BI Systems (Metabase, Zoho)', percentage: 55 },
+  { name: 'Automation & Workflow Systems', percentage: 80 },
 ];
 
 const tools = [
@@ -54,16 +54,23 @@ export default function ProfessionalSkills() {
         {/* Top Skill Categories */}
         <div className='grid grid-cols-2 md:grid-cols-4 gap-8 mb-20'>
           {[
-            'Full Stack Development',
-            'Cloud Architecture',
-            'Business Intelligence',
-            'Automation Systems',
+            { name: 'Full Stack Development', icon: '/code.png' },
+            { name: 'Cloud Architecture', icon: '/devops.png' },
+            { name: 'Business Intelligence', icon: '/data_analyst.png' },
+            { name: 'Automation Systems', icon: '/automation.png' },
           ].map((item, index) => (
-            <div
-              key={index}
-              className='flex items-center justify-center h-40 w-40 mx-auto rounded-full border border-blue-400/40 bg-white/5 backdrop-blur-md text-center p-4 text-sm font-medium hover:scale-105 transition'
-            >
-              {item}
+            <div className='m-auto flex flex-col items-center text-center gap-4' key={index}>
+              <div
+                key={index}
+                className='flex items-center justify-center h-40 w-40 mx-auto rounded-full border border-blue-400/40 bg-white/5 backdrop-blur-md text-center p-4 text-sm font-medium hover:scale-105 transition'
+              >
+                <img
+                  src={item?.icon}
+                  alt={item?.name + ' Icon'}
+                  className='mx-auto w-[80%]'
+                />
+              </div>
+              {item?.name}
             </div>
           ))}
         </div>
