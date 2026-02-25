@@ -51,15 +51,14 @@ const Certification = () => {
       tags: ['Compiler Design', 'Algorithms', 'Parsing', 'Core CS'],
     },
   ];
-  const badge = (cert) => (
+  const badge = (cert) =>
     cert.badge ? (
       <img
         src={cert.badge}
         alt={`${cert.title} Badge`}
         className='w-10 h-10'
       />
-    ) : null
-  );
+    ) : null;
 
   return (
     <section
@@ -96,14 +95,14 @@ const Certification = () => {
                 <img
                   src={cert.image || '/placeholder.svg'}
                   alt={cert.title}
-                  className='object-contain transition-transform duration-500 hover:scale-110'
+                  className='object-contain transition-transform duration-500 hover:scale-110 h-100'
                 />
               </div>
 
               <div className='p-2'>
                 <h3 className='text-xl font-bold flex gap-2 items-center'>
                   {badge(cert)}
-                  {cert.title}      
+                  {cert.title}
                 </h3>
                 {/* <p className='text-gray-700 mb-4'>{cert.description}</p> */}
 
