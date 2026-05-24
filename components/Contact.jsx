@@ -5,16 +5,15 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
 import { BorderBeam } from './magicui/border-beam';
-import { CONTACT_FORM_ACCESS_KEY } from '@/utils/config';
 
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const [formData, setFormData] = useState({
-    access_key: CONTACT_FORM_ACCESS_KEY,
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
 
@@ -30,25 +29,19 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    if (!formData.access_key) {
-      setSubmitStatus('error');
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Accept: 'application/json',
         },
         body: JSON.stringify(formData),
       });
-      const result = await response.json();
-      if (result.success) {
+      if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setSubmitStatus('error');
       }
     } catch (error) {
       setSubmitStatus('error');
@@ -88,7 +81,7 @@ export default function Contact() {
         ref={ref}
       >
         <motion.h2
-          className='text-3xl md:text-4xl font-bold text-center mb-16 gradient-text'
+          className='section-title gradient-text font-[var(--font-space-grotesk)]'
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -123,11 +116,11 @@ export default function Contact() {
                       target='_blank'
                       rel='noopener noreferrer'
                     >
-                      <div className='p-3 rounded-full bg-white shadow-md'>
+                      <div className='p-3 rounded-full bg-cyan-50 text-teal-700 shadow-sm'>
                         {info.icon}
                       </div>
                       <div>
-                        <h4 className='text-sm text-gray-600'>{info.title}</h4>
+                        <h4 className='text-sm text-slate-500'>{info.title}</h4>
                         <p className='font-medium'>{info.value}</p>
                       </div>
                     </motion.a>
@@ -168,7 +161,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder='Drop your name'
-                        className='w-full px-4 py-3 rounded bg-white/70 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50'
+                        className='w-full px-4 py-3 rounded bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/40'
                         required
                       />
                     </div>
@@ -187,7 +180,26 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder='Drop your email'
-                        className='w-full px-4 py-3 rounded bg-white/70 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50'
+                        className='w-full px-4 py-3 rounded bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/40'
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor='phone'
+                        className='block text-sm font-medium mb-2'
+                      >
+                        Your Phone
+                      </label>
+                      <input
+                        type='tel'
+                        id='phone'
+                        name='phone'
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder='Drop your phone number'
+                        className='w-full px-4 py-3 rounded bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/40'
                         required
                       />
                     </div>
@@ -207,14 +219,14 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder='Write something!'
-                      className='w-full px-4 py-3 rounded bg-white/70 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50'
+                      className='w-full px-4 py-3 rounded bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/40'
                       required
                     ></textarea>
                   </div>
 
                   <motion.button
                     type='submit'
-                    className='px-6 py-3 bg-gradient-to-r from-[#6366f1] to-[#ec4899] text-white rounded flex items-center gap-2'
+                    className='px-6 py-3 bg-gradient-to-r from-teal-700 to-cyan-600 text-white rounded flex items-center gap-2 shadow-lg'
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     disabled={isSubmitting}

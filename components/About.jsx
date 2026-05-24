@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
@@ -15,7 +15,7 @@ export default function About() {
     >
       <div className='container mx-auto px-4'>
         <motion.h2
-          className='text-3xl md:text-4xl font-bold text-center mb-16 gradient-text'
+          className='section-title gradient-text font-[var(--font-space-grotesk)]'
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -49,9 +49,9 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className='glass p-8 shadow'>
-              <h3 className='text-2xl font-bold mb-4'>Who am I?</h3>
-              <p className='mb-4'>
+            <div className='glass p-8 md:p-10'>
+              <h3 className='text-3xl font-[var(--font-space-grotesk)] font-bold mb-5'>Who am I?</h3>
+              <p className='mb-4 text-slate-600 leading-relaxed'>
                 Full Stack Developer and Cloud Engineer with hands-on experience
                 in building scalable web, desktop, and cloud-based applications
                 using Next.js, Electron.js, REST APIs, and AWS. Currently
@@ -65,7 +65,7 @@ export default function About() {
                   Elcom Digital
                 </a>
               </p>
-              <p className='mb-4'>
+              <p className='mb-4 text-slate-600 leading-relaxed'>
                 I specialize in building high-performance platforms using
                 Next.js, JavaScript, Electron.js, and AWS cloud infrastructure.
                 I design and deploy high-performance platforms, business
@@ -74,7 +74,7 @@ export default function About() {
                 application architecture, and data-driven decision-making
                 solutions.
               </p>
-              <p>
+              <p className='text-slate-600 leading-relaxed'>
                 Beyond development, you can find me hiking, playing cricket, or
                 experimenting with new recipes.
               </p>
@@ -85,3 +85,4 @@ export default function About() {
     </section>
   );
 }
+

@@ -1,32 +1,24 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Instagram,
-  Heart,
-  Facebook,
-} from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Heart } from 'lucide-react';
 
 export default function Footer() {
   const socialLinks = [
-    { icon: <Github size={20} />, url: 'http://github.com/iamAmitkumar' },
+    { icon: <Github size={20} />, url: 'https://github.com/amitjha1305/' },
     {
       icon: <Linkedin size={20} />,
-      url: 'https://linkedin.com/in/iamAmitkumar',
+      url: 'https://www.linkedin.com/in/amit-kumar-jha-46339b216/',
     },
-    { icon: <Twitter size={20} />, url: 'https://x.com/im_Amitkumar' },
+    { icon: <Twitter size={20} />, url: 'https://x.com/ExpartGame7756' },
     {
       icon: <Instagram size={20} />,
-      url: 'https://instagram.com/iam_Amitkumar',
+      url: 'https://www.instagram.com/amitjha7833?igsh=MTk3dG5oeTVmYzByZQ==',
     },
-    { icon: <Facebook size={20} />, url: 'http://facebook.com/iamAmit2005' },
   ];
 
   return (
-    <footer className='py-8 border-t border-gray-200'>
+    <footer className='py-10 border-t border-slate-200/80 bg-white/50 backdrop-blur-md'>
       <div className='container mx-auto px-4'>
         <div className='flex flex-col md:flex-row justify-between items-center'>
           <motion.div
@@ -53,7 +45,7 @@ export default function Footer() {
               <motion.a
                 key={index}
                 href={link.url}
-                className='p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow'
+                className='p-2 rounded-full bg-white/90 border border-slate-200 shadow-sm hover:shadow-md transition-shadow'
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 target='_blank'
                 rel='noopener noreferrer'
@@ -65,18 +57,13 @@ export default function Footer() {
         </div>
 
         <motion.div
-          className='text-center mt-8 text-sm text-gray-600'
+          className='text-center mt-8 text-sm text-slate-600'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p className='flex items-center justify-center gap-1'>
-            Made with{' '}
-            <Heart
-              size={16}
-              className='text-accent'
-            />{' '}
-            by Amit Kumar Jha © {new Date().getFullYear()}
+            Made with <Heart size={16} className='text-orange-500' /> by Amit Kumar Jha (c) {new Date().getFullYear()}
           </p>
         </motion.div>
       </div>

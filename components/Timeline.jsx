@@ -31,14 +31,14 @@ export default function Timeline() {
   return (
     <section
       id='timeline'
-      className='section-padding bg-gradient-to-b from-indigo-50 to-transparent'
+      className='section-padding'
     >
       <div
         className='container mx-auto px-4'
         ref={ref}
       >
         <motion.h2
-          className='text-3xl md:text-4xl font-bold text-center mb-16 gradient-text'
+          className='section-title gradient-text font-[var(--font-space-grotesk)]'
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -48,7 +48,7 @@ export default function Timeline() {
 
         <div className='relative'>
           {/* Timeline line */}
-          <div className='absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary to-accent rounded-full'></div>
+          <div className='absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-teal-600 to-cyan-500 rounded-full'></div>
 
           {/* Timeline items */}
           <div className='space-y-12'>
@@ -70,7 +70,7 @@ export default function Timeline() {
                 </div>
 
                 <div className='pl-12 md:pl-8 md:w-1/2 md:px-8'>
-                  <div className='glass p-6 shadow'>
+                  <div className='glass p-6 md:p-8'>
                     <span className='inline-block px-3 py-1 bg-white/70 rounded-full text-sm font-medium mb-2'>
                       {item.year}
                     </span>

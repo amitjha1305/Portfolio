@@ -32,17 +32,17 @@ const tools = [
 
 export default function ProfessionalSkills() {
   return (
-    <section className='w-full py-20 bg-gradient-to-br from-[#0a0f2c] to-[#111a4d] text-white'>
+    <section id='skills' className='w-full section-padding'>
       <div className='max-w-7xl mx-auto px-6'>
         {/* Header Section */}
-        <div className='mb-16 flex justify-between items-center'>
-          <h2 className='text-4xl md:text-5xl font-bold mb-4 flex flex-col gap-2'>
+        <div className='mb-16 flex flex-col lg:flex-row justify-between lg:items-center gap-8'>
+          <h2 className='text-4xl md:text-5xl font-bold mb-4 flex flex-col gap-2 section-title text-left lg:mb-0'>
             <span className={`${playfair.className} text-5xl`}>
               My Professional{' '}
             </span>
-            <span className='text-blue-400'>Technical Expertise</span>
+            <span className='gradient-text'>Technical Expertise</span>
           </h2>
-          <p className='text-gray-300 max-w-xl'>
+          <p className='text-slate-600 max-w-xl leading-relaxed'>
             Delivering high-performance full stack solutions with strong
             expertise in cloud infrastructure, system architecture, and data
             engineering. I design secure, scalable applications and intelligent
@@ -62,7 +62,7 @@ export default function ProfessionalSkills() {
             <div className='m-auto flex flex-col items-center text-center gap-4' key={index}>
               <div
                 key={index}
-                className='flex items-center justify-center h-40 w-40 mx-auto rounded-full border border-blue-400/40 bg-white/5 backdrop-blur-md text-center p-4 text-sm font-medium hover:scale-105 transition'
+                className='flex items-center justify-center h-40 w-40 mx-auto rounded-full border border-teal-700/20 bg-white/80 backdrop-blur-md text-center p-4 text-sm font-medium hover:scale-105 transition shadow-sm'
               >
                 <img
                   src={item?.icon}
@@ -70,7 +70,7 @@ export default function ProfessionalSkills() {
                   className='mx-auto w-[80%]'
                 />
               </div>
-              {item?.name}
+              <p className='text-slate-700'>{item?.name}</p>
             </div>
           ))}
         </div>
@@ -88,9 +88,9 @@ export default function ProfessionalSkills() {
                   <span>{skill.name}</span>
                   <span>{skill.percentage}%</span>
                 </div>
-                <div className='w-full bg-white/10 rounded-full h-2'>
+                <div className='w-full bg-slate-200 rounded-full h-2'>
                   <div
-                    className='bg-blue-400 h-2 rounded-full transition-all duration-700'
+                    className='bg-gradient-to-r from-teal-600 to-cyan-500 h-2 rounded-full transition-all duration-700'
                     style={{ width: `${skill.percentage}%` }}
                   />
                 </div>
@@ -109,9 +109,9 @@ export default function ProfessionalSkills() {
                   <span>{skill.name}</span>
                   <span>{skill.percentage}%</span>
                 </div>
-                <div className='w-full bg-white/10 rounded-full h-2'>
+                <div className='w-full bg-slate-200 rounded-full h-2'>
                   <div
-                    className='bg-blue-400 h-2 rounded-full transition-all duration-700'
+                    className='bg-gradient-to-r from-teal-600 to-cyan-500 h-2 rounded-full transition-all duration-700'
                     style={{ width: `${skill.percentage}%` }}
                   />
                 </div>
@@ -121,8 +121,8 @@ export default function ProfessionalSkills() {
         </div>
 
         {/* Tools Section */}
-        <div className='mt-20 bg-white/5 p-8 rounded-2xl backdrop-blur-md border border-white/10'>
-          <h3 className='text-2xl font-semibold mb-6 text-blue-400'>
+        <div className='mt-20 glass p-8 rounded-2xl backdrop-blur-md'>
+          <h3 className='text-2xl font-semibold mb-6 text-teal-700'>
             Technologies & Platforms I Work With
           </h3>
 
@@ -130,7 +130,7 @@ export default function ProfessionalSkills() {
             {tools.map((tool, index) => (
               <span
                 key={index}
-                className='px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-sm hover:bg-blue-500/30 transition'
+                className='px-4 py-2 bg-cyan-50 border border-cyan-200 rounded-full text-sm text-slate-700 hover:bg-cyan-100 transition'
               >
                 {tool}
               </span>

@@ -1,2 +1,5 @@
-export const CONTACT_FORM_ACCESS_KEY = "635397bd-d472-4df8-9dad-aaa63cc13e9a"
-export const DATABASE_URL = "prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMDFKWUM0RTNaUkNFMEo5RkRHR1RKNlM0QTgiLCJ0ZW5hbnRfaWQiOiI2ZjBkODBkMzRhMmUwZjViYTBlZDViYjcyYmU5MzlmMjc5NTFkOWIxMDk4NTA3YTAwNDFlZjgwMzM4YWU3NTZlIiwiaW50ZXJuYWxfc2VjcmV0IjoiYTkwMGVkYmMtOGI4Yy00NDlhLTg2YjktNzVmNTk0OTJkODMwIn0.IPWLP-UrewER8DOeHvpmnqQObf0xKAKaZ9tqeFF0wU8"
+export const GOOGLE_SHEET_SCRIPT_URL =
+  process.env.GOOGLE_SHEET_SCRIPT_URL ||
+  "https://script.google.com/macros/s/AKfycbyRZD48a1v7oBEmaAP7VOPvlEcgYfJ-_9PRqYfQtX8jY3NQlNLkfR-paLPqPMMADgjy/exec";
+
+export const DATABASE_URL = process.env.DATABASE_URL || "";

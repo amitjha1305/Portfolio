@@ -1,10 +1,14 @@
-import { Inter } from 'next/font/google';
+import { Manrope, Space_Grotesk } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+});
 
 export const metadata = {
   title: "Amit's Portfolio",
@@ -21,7 +25,7 @@ export default function RootLayout({ children }) {
       lang='en'
       className='scroll-smooth'
     >
-      <body className={`${inter.className}`}>
+      <body className={`${manrope.variable} ${spaceGrotesk.variable} font-[var(--font-manrope)]`}>
         <Header />
         <main className='min-h-screen md:mt-8'>{children}</main>
         <WhatsAppButton />

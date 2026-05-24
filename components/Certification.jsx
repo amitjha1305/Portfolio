@@ -66,7 +66,7 @@ const Certification = () => {
 
   return (
     <section
-      id='s'
+      id='certifications'
       className='section-padding'
     >
       <div
@@ -74,7 +74,7 @@ const Certification = () => {
         ref={ref}
       >
         <motion.h2
-          className='text-3xl md:text-4xl font-bold text-center mb-16 gradient-text'
+          className='section-title gradient-text font-[var(--font-space-grotesk)]'
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -83,7 +83,7 @@ const Certification = () => {
         </motion.h2>
 
         <motion.div
-          className='grid grid-cols-1 md:grid-cols-3 gap-10'
+          className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'
           //   variants={containerVariants}
           initial='hidden'
           animate={isInView ? 'visible' : 'hidden'}
@@ -91,7 +91,7 @@ const Certification = () => {
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
-              className='glass overflow-hidden rounded-xl shadow-md'
+              className='glass overflow-hidden rounded-2xl shadow-md'
               //   variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
@@ -119,7 +119,7 @@ const Certification = () => {
                     {cert.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className='px-3 py-1 bg-white/50 rounded-full text-sm'
+                        className='px-3 py-1 bg-cyan-50 border border-cyan-200 rounded-full text-sm text-slate-700'
                       >
                         {tag}
                       </span>

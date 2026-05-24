@@ -89,6 +89,11 @@ export function DotPattern({
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
+  const pseudoRandom = (seed: number) => {
+    const x = Math.sin(seed * 12.9898) * 43758.5453;
+    return x - Math.floor(x);
+  };
+
   const dots = Array.from(
     {
       length:
@@ -101,8 +106,8 @@ export function DotPattern({
       return {
         x: col * width + cx,
         y: row * height + cy,
-        delay: Math.random() * 5,
-        duration: Math.random() * 3 + 2,
+        delay: pseudoRandom(i + 1) * 5,
+        duration: pseudoRandom(i + 101) * 3 + 2,
       };
     },
   );

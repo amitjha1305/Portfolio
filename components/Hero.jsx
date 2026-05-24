@@ -13,9 +13,9 @@ export default function Hero() {
     >
       {/* Background blobs */}
       <div className='absolute inset-0 -z-10'>
-        <div className='absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply blur-3xl opacity-30 animate-blob'></div>
-        <div className='absolute top-40 right-10 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply blur-3xl opacity-30 animate-blob animation-delay-2000'></div>
-        <div className='absolute bottom-20 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply blur-3xl opacity-30 animate-blob animation-delay-4000'></div>
+        <div className='absolute top-20 left-10 w-72 h-72 bg-cyan-300 rounded-full mix-blend-multiply blur-3xl opacity-30 animate-blob'></div>
+        <div className='absolute top-40 right-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply blur-3xl opacity-30 animate-blob animation-delay-2000'></div>
+        <div className='absolute bottom-20 left-1/2 w-72 h-72 bg-teal-200 rounded-full mix-blend-multiply blur-3xl opacity-30 animate-blob animation-delay-4000'></div>
       </div>
 
       {/* Main Layout */}
@@ -36,7 +36,7 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
               src='/profile.png'
               alt='Profile'
-              className='rounded-full object-cover relative z-10  w-40 h-40  md:w-64 md:h-64 '
+              className='rounded-full object-cover relative z-10  w-44 h-44 md:w-72 md:h-72 border-4 border-white/70 shadow-2xl'
             />
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function Hero() {
         }}
       >
         <a href='#about'>
-          <ArrowDown size={32} />
+          <ArrowDown size={32} className='text-teal-700' />
         </a>
       </motion.div>
     </section>
